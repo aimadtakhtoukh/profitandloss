@@ -1,4 +1,4 @@
-package fr.canary.xml.serializers
+package fr.profit.xml.serializers
 
 import kotlinx.serialization.KSerializer
 import kotlinx.serialization.descriptors.PrimitiveKind

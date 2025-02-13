@@ -1,4 +1,4 @@
-package fr.canary.database.table
+package fr.profit.database.table
 
 import org.jetbrains.exposed.sql.Table
 import org.jetbrains.exposed.sql.javatime.date

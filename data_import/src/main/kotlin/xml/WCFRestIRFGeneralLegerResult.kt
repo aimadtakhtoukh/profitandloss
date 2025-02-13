@@ -1,7 +1,7 @@
-package fr.canary.xml
+package fr.profit.xml
 
-import fr.canary.model.Ledger
-import fr.canary.xml.serializers.*
+import fr.profit.model.Ledger
+import fr.profit.xml.serializers.*
 import kotlinx.serialization.Serializable
 import nl.adaptivity.xmlutil.serialization.XML
 import nl.adaptivity.xmlutil.serialization.XmlElement

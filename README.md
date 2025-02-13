@@ -1,4 +1,4 @@
-## Exercice Canary
+## Exercice Profit & Loss
 
 Le projet est composé de 3 parties codées : 
 

@@ -1,4 +1,4 @@
-package fr.canary.model
+package fr.profit.model
 
 import java.math.BigDecimal
 import java.time.LocalDate

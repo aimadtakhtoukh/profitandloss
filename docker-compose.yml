@@ -1,54 +1,54 @@
 services:
-  canary-postgres:
+  profit-postgres:
     image: postgres
-    container_name: canary-postgres
+    container_name: profit-postgres
     environment:
-      POSTGRES_USER: canary
-      POSTGRES_PASSWORD: canary
-      POSTGRES_DB: canary
+      POSTGRES_USER: profit
+      POSTGRES_PASSWORD: profit
+      POSTGRES_DB: profit
     ports:
       - "5432:5432"
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U canary"]
+      test: ["CMD-SHELL", "pg_isready -U profit"]
       interval: 5s
       timeout: 5s
       retries: 5
     networks:
       - database
-  canary-data-import:
-    container_name: canary-data-import
+  profit-data-import:
+    container_name: profit-data-import
     build:
       context: data_import
       dockerfile: Dockerfile
     environment:
-      DB_HOST: "canary-postgres"
+      DB_HOST: "profit-postgres"
     depends_on:
-      canary-postgres:
+      profit-postgres:
         condition: service_healthy
     networks:
       - database
-  canary-api:
-    container_name: canary-api
+  profit-api:
+    container_name: profit-api
     build:
       context: api
       dockerfile: Dockerfile
     environment:
-      DB_HOST: "canary-postgres"
+      DB_HOST: "profit-postgres"
     ports:
       - "8080:8080"
     depends_on:
-      canary-postgres:
+      profit-postgres:
         condition: service_healthy
     networks:
       - database
       - web
-  canary-front:
-    container_name: canary-front
+  profit-front:
+    container_name: profit-front
     build:
       context: front
       dockerfile: Dockerfile
     environment:
-      - BASE_URL=http://canary-api:8080
+      - BASE_URL=http://profit-api:8080
     ports:
       - "80:80"
     networks:

@@ -1,9 +1,9 @@
-package fr.canary.json
+package fr.profit.json
 
-import fr.canary.json.serializers.BigDecimalSerializer
-import fr.canary.json.serializers.CurrencySerializer
-import fr.canary.json.serializers.LocalDateSerializer
-import fr.canary.json.serializers.UUIDSerializer
+import fr.profit.json.serializers.BigDecimalSerializer
+import fr.profit.json.serializers.CurrencySerializer
+import fr.profit.json.serializers.LocalDateSerializer
+import fr.profit.json.serializers.UUIDSerializer
 import kotlinx.serialization.Serializable
 import java.math.BigDecimal
 import java.time.LocalDate

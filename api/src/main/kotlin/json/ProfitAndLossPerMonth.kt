@@ -1,7 +1,7 @@
-package fr.canary.json
+package fr.profit.json
 
-import fr.canary.json.serializers.BigDecimalSerializer
-import fr.canary.json.serializers.LocalDateSerializer
+import fr.profit.json.serializers.BigDecimalSerializer
+import fr.profit.json.serializers.LocalDateSerializer
 import kotlinx.serialization.Serializable
 import java.math.BigDecimal
 import java.time.LocalDate

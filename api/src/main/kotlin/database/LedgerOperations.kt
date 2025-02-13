@@ -1,10 +1,10 @@
-package fr.canary.database
+package fr.profit.database
 
 import com.zaxxer.hikari.HikariConfig
 import com.zaxxer.hikari.HikariDataSource
-import fr.canary.database.table.LedgerTable
-import fr.canary.json.Ledger
-import fr.canary.json.ProfitAndLossPerMonth
+import fr.profit.database.table.LedgerTable
+import fr.profit.json.Ledger
+import fr.profit.json.ProfitAndLossPerMonth
 import org.jetbrains.exposed.sql.Database
 import org.jetbrains.exposed.sql.ResultRow
 import org.jetbrains.exposed.sql.SortOrder
@@ -19,10 +19,10 @@ object LedgerOperations {
     fun init() {
         val jdbcHost = System.getenv("DB_HOST") ?: "localhost"
         val jdbcPort = System.getenv("DB_PORT") ?: "5432"
-        val jdbcDatabase = System.getenv("DB_DATABASE") ?: "canary"
+        val jdbcDatabase = System.getenv("DB_DATABASE") ?: "profit"
         val jdbcURL = System.getenv("DB_URL") ?: "jdbc:postgresql://$jdbcHost:$jdbcPort/$jdbcDatabase"
-        val jdbcUser = System.getenv("DB_USER") ?: "canary"
-        val jdbcPassword = System.getenv("DB_PASSWORD") ?: "canary"
+        val jdbcUser = System.getenv("DB_USER") ?: "profit"
+        val jdbcPassword = System.getenv("DB_PASSWORD") ?: "profit"
         val hikariConfig = HikariConfig().apply {
             jdbcUrl = jdbcURL
             username = jdbcUser

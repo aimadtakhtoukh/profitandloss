@@ -4,7 +4,7 @@ plugins {
     application
 }
 
-group = "fr.canary"
+group = "fr.profit"
 version = "1.0-SNAPSHOT"
 
 repositories {
@@ -32,12 +32,12 @@ dependencies {
 }
 
 application {
-    mainClass.set("fr.canary.MainKt")
+    mainClass.set("fr.profit.MainKt")
 }
 
 tasks.withType<Jar> {
     manifest {
-        attributes["Main-Class"] = "fr.canary.MainKt"
+        attributes["Main-Class"] = "fr.profit.MainKt"
     }
     // Inclure toutes les dépendances dans un seul JAR exécutable
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE

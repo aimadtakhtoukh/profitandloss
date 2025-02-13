@@ -1,4 +1,4 @@
-package fr.canary.json.serializers
+package fr.profit.json.serializers
 
 import kotlinx.serialization.KSerializer
 import kotlinx.serialization.descriptors.PrimitiveKind

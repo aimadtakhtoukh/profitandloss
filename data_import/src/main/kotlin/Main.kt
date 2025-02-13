@@ -1,9 +1,9 @@
-package fr.canary
+package fr.profit
 
-import fr.canary.database.LedgerOperations
-import fr.canary.database.table.LedgerTable
-import fr.canary.xml.serializeFromFile
-import fr.canary.xml.toModel
+import fr.profit.database.LedgerOperations
+import fr.profit.database.table.LedgerTable
+import fr.profit.xml.serializeFromFile
+import fr.profit.xml.toModel
 import org.jetbrains.exposed.sql.SchemaUtils
 import org.jetbrains.exposed.sql.transactions.transaction
 
