@@ -1,0 +1,14 @@
+# Project exclude paths
+*/.gradle/
+*/build/
+*/build/classes/kotlin/main/
+
+*/.idea
+*.iml
+
+*/dist
+
+*/gradlew
+*/gradlew.bat
+*/.kotlin
+*/gradle/wrapper

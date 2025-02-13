@@ -1,0 +1,58 @@
+services:
+  canary-postgres:
+    image: postgres
+    container_name: canary-postgres
+    environment:
+      POSTGRES_USER: canary
+      POSTGRES_PASSWORD: canary
+      POSTGRES_DB: canary
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U canary"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - database
+  canary-data-import:
+    container_name: canary-data-import
+    build:
+      context: data_import
+      dockerfile: Dockerfile
+    environment:
+      DB_HOST: "canary-postgres"
+    depends_on:
+      canary-postgres:
+        condition: service_healthy
+    networks:
+      - database
+  canary-api:
+    container_name: canary-api
+    build:
+      context: api
+      dockerfile: Dockerfile
+    environment:
+      DB_HOST: "canary-postgres"
+    ports:
+      - "8080:8080"
+    depends_on:
+      canary-postgres:
+        condition: service_healthy
+    networks:
+      - database
+      - web
+  canary-front:
+    container_name: canary-front
+    build:
+      context: front
+      dockerfile: Dockerfile
+    environment:
+      - BASE_URL=http://canary-api:8080
+    ports:
+      - "80:80"
+    networks:
+      - web
+networks:
+  database:
+  web:
